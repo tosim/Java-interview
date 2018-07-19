@@ -127,6 +127,46 @@ public class Singleton {
 ## 异常
 Throwable分为Error（JVM无法处理的错误）和Exception（受检异常和非受检异常（RuntimeException））
 
+
+
+## 泛型
+1. Java 的泛型在编译之后是去泛型化的
+2. Java中集合的泛型是防止错误输入的，只在编译阶段有效
+3. 可以通过反射方法添加不同类型的元素
+
+## 反射
+>**这里假设c是某个类的类类型**
+
+### Class
+1. 类是java.lang.Class的实例对象,可以用类名.class 或对象.getClass()方法获取Class类型或者Class.forName("类的全限定名")
+2. 可以通过c.newInstance()创建该类的实例
+3. new 是静态加载类，如果可能用到的某个类不存在，就会编译报错。Class.forName()是动态加载类，运行时加载类，编译时不报错。
+
+### 反射api
+#### 类类型api
+1. String cName = c.getName();
+2. Method[] methods = c.getMethods();	//获取所有public的方法，包括父类中继承来的
+3. Method[] methods = c.getDeclaredMethods();	//获取所有该类的方法，不问访问权限
+
+#### Method的api
+1. Class returnType = method.getReturnType();	//获取方法的返回类型的类类型
+2. Class[] paramClasses = method.getParameterTypes();	//获取方法参数列表类型的类类型
+3. method.invoke(instance,param1,param2,...);		//方法反射，调用instance的method方法
+
+#### Field的api
+1. Field[] fields = c.getFields();		//获取所有public的成员变量
+2. Field[] fields = c.getDeclaredFields();	//获取该类所有的成员变量，不问访问权限
+3. Class fieldType = field.getType();		//获取成员变量的类类型
+4. String fieldName = field.getFieldName(); //获取成员变量的名字
+
+#### Constructor的api
+1. Constructor[] cons = c.getConstructors();	//获取所有public的构造方法
+2. Constructor[] cons = c.getDeclaredConstructs();	//获取该类所有的构造方法，不问访问权限
+3. Class[] paramTypes = consructor.getParameterTypes();	//获取构造函数的参数列表的类类型
+
+### 
+
+
 ## 注解
 用处：  
 1. 生成文档(@param，@return)
@@ -134,9 +174,14 @@ Throwable分为Error（JVM无法处理的错误）和Exception（受检异常和
 3. 编译时检查（@Override）
 
 原理：
-1. 注解继承了Annotation，其具体实现类是Java运行时生成的动态代理类
-2. 
-
+1. Java使用Annotation接口来代表程序元素前面的注解，该接口是所有Annotation类型的父接口
+2. AnnotatedElement接口，该接口代表程序中可以接受注解的程序元素，该接口主要有如下几个实现类：  
+　　Class：类定义  
+　　Constructor：构造器定义  
+　　Field：累的成员变量定义  
+　　Method：类的方法定义  
+　　Package：类的包定义  
+3. 通过反射获取程序元素，再通过程序元素获取注解时，返回的是注解的动态代理对象$Proxy1。通过注解的代理对象获取注解的信息时，会最终调用AnnotationInvicationHandler的invoke方法，从memberValuesMap中索引出对应的值，该map来源于Java常量池。
 
 
 

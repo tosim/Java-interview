@@ -1,5 +1,8 @@
 package com.tosim.interview.javabase.cover;
 
+
+import java.lang.reflect.Method;
+
 public class Son extends Father implements Cloneable{
 
     /**
