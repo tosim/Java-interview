@@ -42,7 +42,7 @@ public class Singleton {
 2. 方法
   final方法不能被覆盖，只能被重载
 
-3. 类
+3. 类  
   声明类不能被继承
   
 ## static
