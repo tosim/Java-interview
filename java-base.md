@@ -42,7 +42,7 @@ public class Singleton {
 2. 方法
   final方法不能被覆盖，只能被重载
 
-3. 类
+3. 类  
   声明类不能被继承
   
 ## static
@@ -164,9 +164,6 @@ Throwable分为Error（JVM无法处理的错误）和Exception（受检异常和
 2. Constructor[] cons = c.getDeclaredConstructs();	//获取该类所有的构造方法，不问访问权限
 3. Class[] paramTypes = consructor.getParameterTypes();	//获取构造函数的参数列表的类类型
 
-### 
-
-
 ## 注解
 用处：  
 1. 生成文档(@param，@return)
@@ -181,16 +178,41 @@ Throwable分为Error（JVM无法处理的错误）和Exception（受检异常和
 　　Field：累的成员变量定义  
 　　Method：类的方法定义  
 　　Package：类的包定义  
-3. 通过反射获取程序元素，再通过程序元素获取注解时，返回的是注解的动态代理对象$Proxy1。通过注解的代理对象获取注解的信息时，会最终调用AnnotationInvicationHandler的invoke方法，从memberValuesMap中索引出对应的值，该map来源于Java常量池。
+3. 通过反射获取程序元素，再通过程序元素获取注解时，返回的是注解的动态代理对象$Proxy1。通过注解的代理对象获取注解的信息时，会最终调用AnnotationInvicationHandler的invoke方法，从memberValuesMap中索引出对应的值，该map来源于Java常量池（引用位于方法区）。
+
+使用：
+1. @Target说明了Annotation所修饰的对象范围
+2. @Retention定义了该Annotation被保留的时间长短
+3. @Inherited作用是，使用此注解声明出来的自定义注解，在使用此自定义注解时，如果注解在类上面时，子类会自动继承此注解，否则的话，子类不会继承此注解。这里要注意，使用@Inherited声明出来的注解，只有在类上使用时才会有效，在方法，属性等其他程序元素上注解无效
+4. @Documented用于生成注解的文档
 
 
+### Collection和Collections
+1. Collection 是集合的接口，提供了集合的基本操作的接口
+2. Collections 是一个工具类，包装了许多操作集合的静态方法。
 
 
-
-
-
-
-
+### 解决hash冲突
+1. 开放地址法：  
+  线性探测再散列：每次向后移动一个位置  
+  二次探测再散列：每次移动k * k或-k * k个位置  
+  伪随机探测再散列：每次移动伪随机数个位置   
+2. 再hash法：  
+  有多个hash函数，第二次调用不同的hash函数  
+3. 链地址法：  
+  将hash值有冲突的元素挂在同一个链表上（考虑将链表优化成树结构）
+4. 建立公共溢出区：  
+  新建一张溢出表，查找时若未在原表上找到，则在溢出表上顺序查找
+  
+### 排序算法
+排序算法|时间复杂度|空间复杂度|稳定性
+-|-|-|-
+冒泡排序|O(n^2)|O(n)|稳定
+选择排序|O(n^2)|O(n)|不稳定
+插入排序|O(n^2)|O(n)|不稳定
+希尔排序|O(nlogn)|O(n)|不稳定
+堆排序|O(nlogn)|O(n)|不稳定
+归并排序|O(nlogn)|O(nlogn)|稳定
 
 
 
