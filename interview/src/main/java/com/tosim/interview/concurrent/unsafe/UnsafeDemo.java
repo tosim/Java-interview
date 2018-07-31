@@ -25,42 +25,53 @@ public class UnsafeDemo {
 //        Semaphore s;
 //        AbstractQueuedSynchronizer aqs;
 
-       Thread threadA = new Thread(new Runnable() {
-           public void run() {
-               int i = 0;
-               while(i < 5){
-                   System.out.println("thread-A");
-                   try {
-                       Thread.sleep(2000);
-                   } catch (InterruptedException e) {
-                       e.printStackTrace();
-                   }
-                   i++;
-               }
-           }
-       });
-        Thread threadB = new Thread(new Runnable() {
-            public void run() {
-                while(true){
-                    System.out.println("thread-B");
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+//       Thread threadA = new Thread(new Runnable() {
+//           public void run() {
+//               int i = 0;
+//               while(i < 5){
+//                   System.out.println("thread-A");
+//                   try {
+//                       Thread.sleep(2000);
+//                   } catch (InterruptedException e) {
+//                       e.printStackTrace();
+//                   }
+//                   i++;
+//               }
+//           }
+//       });
+//        Thread threadB = new Thread(new Runnable() {
+//            public void run() {
+//                while(true){
+//                    System.out.println("thread-B");
+//                    try {
+//                        Thread.sleep(2000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//        });
+//       threadA.start();
+//       threadB.start();
+//
+//        try {
+//            threadA.join();
+//            System.out.println("ssss");
+//            threadB.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+
+        while(true){
+            new Thread(new Runnable() {
+                public void run() {
+                    while (true) {
+
                     }
                 }
-            }
-        });
-       threadA.start();
-       threadB.start();
-
-        try {
-            threadA.join();
-            System.out.println("ssss");
-            threadB.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            }).start();
         }
-        System.out.println("done");
+//        ClassLoader
+
     }
 }
