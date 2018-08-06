@@ -2,15 +2,19 @@ package com.tosim.interview.concurrent.unsafe;
 
 import sun.misc.Unsafe;
 
+import java.lang.reflect.Proxy;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicStampedReference;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class UnsafeDemo {
 
@@ -65,6 +69,10 @@ public class UnsafeDemo {
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
+        int N = 3;
+        CountDownLatch countDownLatch = new CountDownLatch(N);
+        Lock loc;
+        ThreadLocal s   ;
 
         while(true){
             new Thread(new Runnable() {

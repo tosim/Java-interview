@@ -32,6 +32,7 @@ public class ReentrantDemo {
             } finally {
                 lock.unlock();
             }
+            ;
         }
 
         public void consume() {
