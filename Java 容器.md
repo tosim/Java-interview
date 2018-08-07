@@ -79,3 +79,39 @@ Map与List、Set接口不同，它是由一系列键值对组成的集合，提�
 * TreeMap
     1. 一个有序的key-value集合，非同步，基于红黑树（Red-Black tree）实现，每一个key-value节点作为红黑树的一个节点。
     1. 排序方式也是分为两种，自然排序、定制排序，取决于使用的构造方法。
+
+* ConcurrentHashMap
+
+    **数据结构**
+    数组+链表+红黑树，链表长度大于8时转换为红黑树  
+
+    **重要属性**
+    **sizeCtl**:始终为容量*负载因子,容量为2的幂次
+    -1代表数组正在初始化
+    -N代表有（N-1）个线程正在扩容
+    正数代表初始化或下次扩容的大小
+
+    **ForwardingNode**：
+    标记数组正在扩容，数组元素为ForwardingNode的表示其他线程正在操作，指示此线程操作下一个节点
+
+    **初始化**
+    1. 第一个线程cas操作标记sizeCtl为-1,表示正在初始化
+    2. 其他线程yield让出cpu
+
+    **put操作**
+    1. hash算法：(h&(h>>>16)) & (n-1)
+    2. 获取指定位置的元素f
+        如果f为null，则cas插入新节点
+        如果f为ForwardingNode，说明数组正在扩容，则一起进行并发扩容
+        如果f为链表头节点或者红黑树根节点，则先用synchronized锁定此元素，再将新节点插入到合适位置
+    
+    **扩容操作**
+    1. 构造原数组大小2倍的nextTable
+    2. 将table中的内容并发复制到nextTable
+
+        对于第二步：
+        1.遍历table，每次获取位置i的节点f，构造ForwardingNode
+        2.如果f为null，cas设置ForwardingNode
+        3.如果f为链表，构造反序链表，分别放在nextTable的i和i+n的位置
+        4.如果f为红黑树，也做反序处理，放在i和i+n的位置
+        5.最后将原位置设置为ForwardingNode，指示其他线程此位置已经复制完毕

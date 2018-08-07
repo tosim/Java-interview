@@ -13,13 +13,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UnsafeDemo.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UnsafeDemo.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/unsafe/UnsafeDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="652">
-              <caret line="76" selection-start-line="76" selection-end-line="76" />
+            <state relative-caret-position="374">
+              <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadLocalDemo.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/ThreadLocalDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExectorsTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/Exector/ExectorsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#382#527#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,32 +122,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReentrantLock.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/java/jdk1.8.0_162/src.zip!/java/util/concurrent/locks/ReentrantLock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2822">
-              <caret line="208" column="19" selection-start-line="208" selection-start-column="19" selection-end-line="208" selection-end-column="19" />
-              <folding>
-                <element signature="e#6849#6850#0" expanded="true" />
-                <element signature="e#6907#6908#0" expanded="true" />
-                <element signature="e#8176#8177#0" expanded="true" />
-                <element signature="e#8216#8217#0" expanded="true" />
-                <element signature="e#9117#9118#0" expanded="true" />
-                <element signature="e#9144#9145#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractQueuedSynchronizer.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/java/jdk1.8.0_162/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9605">
-              <caret line="608" column="26" selection-start-line="608" selection-start-column="26" selection-end-line="608" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -173,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/javabase/cover/Father.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/javabase/cover/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/javabase/cover/Son.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/Exector/ExectorsTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/produceconsume/semaphore.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/produceconsume/SemaphoreTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/produceconsume/WaitNotify.java" />
@@ -186,6 +185,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/ThreadLocalDemo.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/unsafe/UnsafeDemo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/Exector/ExectorsTest.java" />
       </list>
     </option>
   </component>
@@ -198,7 +198,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="20" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -259,7 +259,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="interview" type="462c0819:PsiDirectoryNode" />
               <item name="concurrent" type="462c0819:PsiDirectoryNode" />
-              <item name="unsafe" type="462c0819:PsiDirectoryNode" />
+              <item name="Exector" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="interview" type="b2602c69:ProjectViewProjectNode" />
@@ -294,7 +294,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.UnsafeDemo">
+  <component name="RunManager" selected="Application.ExectorsTest">
     <configuration name="BlockingQueueDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tosim.interview.concurrent.produceconsume.BlockingQueueDemo" />
       <module name="interview" />
@@ -306,13 +306,13 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="ReentrantDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.tosim.interview.concurrent.produceconsume.ReentrantDemo" />
+    <configuration name="ExectorsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tosim.interview.concurrent.Exector.ExectorsTest" />
       <module name="interview" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tosim.interview.concurrent.produceconsume.*" />
+          <option name="PATTERN" value="com.tosim.interview.concurrent.Exector.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -392,19 +392,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.ReentrantDemo" />
       <item itemvalue="Application.BlockingQueueDemo" />
       <item itemvalue="Application.SemaphoreDemo" />
       <item itemvalue="Application.ThreadLocalDemo" />
       <item itemvalue="Application.UnsafeDemo" />
+      <item itemvalue="Application.ExectorsTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExectorsTest" />
         <item itemvalue="Application.UnsafeDemo" />
         <item itemvalue="Application.ThreadLocalDemo" />
         <item itemvalue="Application.SemaphoreDemo" />
         <item itemvalue="Application.BlockingQueueDemo" />
-        <item itemvalue="Application.ReentrantDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -424,31 +424,32 @@
       <workItem from="1532062951330" duration="31000" />
       <workItem from="1532997018087" duration="28361000" />
       <workItem from="1533289938620" duration="3036000" />
-      <workItem from="1533308329935" duration="2732000" />
+      <workItem from="1533308329935" duration="5486000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58476000" />
+    <option name="totallyTimeSpent" value="61230000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="26" width="1920" height="1054" extended-state="7" />
+    <frame x="0" y="26" width="1920" height="1054" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32875264" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3065539" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3065539" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -458,7 +459,6 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32875264" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -593,13 +593,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/Exector/ExectorsTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/java/jdk1.8.0_162/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="305">
@@ -699,17 +692,6 @@
             <element signature="e#1966#1967#0" expanded="true" />
             <element signature="e#1995#1996#0" expanded="true" />
             <element signature="e#2041#2042#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/ThreadLocalDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#165#174#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -875,10 +857,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/unsafe/UnsafeDemo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        <state relative-caret-position="374">
+          <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/ThreadLocalDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tosim/interview/concurrent/Exector/ExectorsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#382#527#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
           </folding>
         </state>
       </provider>
